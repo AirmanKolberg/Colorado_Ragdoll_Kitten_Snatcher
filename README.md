@@ -21,8 +21,8 @@ breeder.
 `pip install -r requirements.txt`
 2. Change the name of `secrets_example.py` to `secrets.py`, and amend the variables within as per
 the comment instructions found within that file.
-3. You're done!  Run the app with `python3 app.py` and await to become the gaurdian of a new family
-member(s)!
+3. You're done!  Run the app with `python3 app.py` and await to become the gaurdian of a/some new 
+family member(s)!
 
 *Note:  I do not advise going further to automate the payment/deposit process.  Seems odd for a cat, no?*
 
