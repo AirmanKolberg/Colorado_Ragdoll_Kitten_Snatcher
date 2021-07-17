@@ -24,30 +24,38 @@ def kitten_snipe(ragdoll_link, text_to_find,
                  numbers_to_text, numbers_to_call,
                  startup_message):
 
-    # Display startup message on screen and text to recipients
-    print(startup_message)
-    twilio_text(startup_message, numbers_to_text)
-    
-    kitten_sniping = True
-    while kitten_sniping:
+    try:
 
-        r = requests.get(ragdoll_link)
-        page_text = r.text
-
-        # If the "be patient" message is still there, try again in a minute
-        if text_to_find in page_text:
-
-            countdown(60)
+        # Display startup message on screen and text to recipients
+        print(startup_message)
+        twilio_text(startup_message, numbers_to_text)
         
-        else:
+        kitten_sniping = True
+        while kitten_sniping:
 
-            text_message_body = f"""CAT UPDATE!
-{ragdoll_link}"""
+            r = requests.get(ragdoll_link)
+            page_text = r.text
 
-            twilio_call(numbers_to_call)
-            twilio_text(text_message_body, numbers_to_text)
+            # If the "be patient" message is still there, try again in a minute
+            if text_to_find in page_text:
 
-            kitten_sniping = False
+                countdown(60)
+            
+            else:
+
+                text_message_body = f"""CAT UPDATE!
+    {ragdoll_link}"""
+
+                twilio_call(numbers_to_call)
+                twilio_text(text_message_body, numbers_to_text)
+
+                kitten_sniping = False
+    
+    except Exception:
+
+        kitten_snipe(ragdoll_link, text_to_find,
+                     numbers_to_text, numbers_to_call,
+                     startup_message)
 
 
 
