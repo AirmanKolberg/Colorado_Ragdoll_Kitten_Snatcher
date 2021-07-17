@@ -2,6 +2,7 @@ from secrets import ragdoll_link, my_number, text_to_find
 from twilio_functions import twilio_call, twilio_text
 import requests
 from system_functions import clear_screen, countdown
+from time import sleep
 
 
 def generate_startup_message(url, numbers_to_alert,
@@ -51,7 +52,11 @@ def kitten_snipe(ragdoll_link, text_to_find,
 
                 kitten_sniping = False
     
-    except Exception:
+    except Exception as e:
+
+        twilio_text(f'Error!\nException: {e}\nRetrying in one minute...', [my_number])
+
+        sleep(60)
 
         kitten_snipe(ragdoll_link, text_to_find,
                      numbers_to_text, numbers_to_call,
