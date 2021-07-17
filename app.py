@@ -24,7 +24,9 @@ def kitten_snipe(ragdoll_link, text_to_find,
                  numbers_to_text, numbers_to_call,
                  startup_message):
 
+    # Display startup message on screen and text to recipients
     print(startup_message)
+    twilio_text(startup_message, numbers_to_text)
     
     kitten_sniping = True
     while kitten_sniping:
