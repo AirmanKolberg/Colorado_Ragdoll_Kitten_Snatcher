@@ -1,4 +1,4 @@
-from secrets import ragdoll_link, my_number, my_other_number, text_to_find
+from secrets import ragdoll_link, my_number, text_to_find
 from twilio_functions import twilio_call, twilio_text
 import requests
 from system_functions import clear_screen, countdown
@@ -57,7 +57,6 @@ if __name__ == '__main__':
     clear_screen()
 
     # Generate a startup message and overall functionality based on secrets.py file
-    message = generate_startup_message(ragdoll_link, [my_number, my_other_number], text_to_find)
+    message = generate_startup_message(ragdoll_link, [my_number], text_to_find)
 
-    kitten_snipe(ragdoll_link, text_to_find, [my_number, my_other_number],
-                 [my_number], message)
+    kitten_snipe(ragdoll_link, text_to_find, [my_number], [my_number], message)
