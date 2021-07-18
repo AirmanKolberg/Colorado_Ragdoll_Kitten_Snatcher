@@ -40,7 +40,8 @@ def kitten_snipe(ragdoll_link, text_to_find,
             # If the "be patient" message is still there, try again in a minute
             if text_to_find in page_text:
 
-                countdown(60)
+                # Parameters are;  number of seconds, link to display on screen
+                countdown(60, ragdoll_link)
             
             else:
 
@@ -61,7 +62,6 @@ def kitten_snipe(ragdoll_link, text_to_find,
         kitten_snipe(ragdoll_link, text_to_find,
                      numbers_to_text, numbers_to_call,
                      startup_message)
-
 
 
 if __name__ == '__main__':
