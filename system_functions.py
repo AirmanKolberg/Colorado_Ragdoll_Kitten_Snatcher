@@ -13,7 +13,7 @@ def clear_screen():
     bash_command('clear')
 
 
-def countdown(seconds):
+def countdown(seconds, link):
     
     # Count down until 0 so that the last second is counted
     while seconds > -1:
@@ -30,6 +30,8 @@ def countdown(seconds):
         # `timer` example: "Checking again in 1 second..."
         timer = f'Checking again in {secs} {sec_display}...'
 
+        # Display the link during the countdown for quick-access
+        print(link)
         print(timer, end="\r")
 
         # Wait a second
