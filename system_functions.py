@@ -28,11 +28,10 @@ def countdown(seconds, link):
             sec_display = 'second'
 
         # `timer` example: "Checking again in 1 second..."
-        timer = f'Checking again in {secs} {sec_display}...'
+        timer = f'{secs} {sec_display}'
 
         # Display the link during the countdown for quick-access
-        print(link)
-        print(timer, end="\r")
+        print(f'{timer}: {link}', end="\r")
 
         # Wait a second
         sleep(1)
