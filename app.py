@@ -40,7 +40,7 @@ def kitten_snipe(ragdoll_link, text_to_find,
             if text_to_find in page_text:
 
                 # Parameters are;  number of seconds, link to display on screen
-                countdown((60 * 2), ragdoll_link)
+                countdown(120, ragdoll_link)
             
             else:
 
