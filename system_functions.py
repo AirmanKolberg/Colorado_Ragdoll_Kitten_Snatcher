@@ -20,6 +20,13 @@ def countdown(seconds, link):
 
         mins, secs = divmod(seconds, 60)
 
+        # Setup grammar conditions for min/mins
+        if mins != 1:
+            min_display = 'minutes'
+
+        else:
+            min_display = 'minute'
+
         # Setup grammar conditions for sec/secs
         if secs != 1:
             sec_display = 'seconds'
@@ -27,8 +34,7 @@ def countdown(seconds, link):
         else:
             sec_display = 'second'
 
-        # `timer` example: "Checking again in 1 second..."
-        timer = f'{secs} {sec_display}'
+        timer = f'{mins} {min_display} {secs} {sec_display}'
 
         # Display the link during the countdown for quick-access
         print(f'{timer}: {link}', end="\r")
