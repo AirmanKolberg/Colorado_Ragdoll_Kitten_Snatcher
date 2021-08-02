@@ -20,6 +20,7 @@ A request will be sent every 60 seconds, and you will be notified when that mess
     return message
 
 
+# None for numbers if you choose not to be notified
 def kitten_snipe(ragdoll_link, text_to_find,
                  numbers_to_text, numbers_to_call,
                  startup_message):
@@ -47,8 +48,11 @@ def kitten_snipe(ragdoll_link, text_to_find,
                 text_message_body = f"""CAT UPDATE!
     {ragdoll_link}"""
 
-                twilio_call(numbers_to_call)
-                twilio_text(text_message_body, numbers_to_text)
+                if numbers_to_call:
+                    twilio_call(numbers_to_call)
+                
+                if numbers_to_text:
+                    twilio_text(text_message_body, numbers_to_text)
 
                 kitten_sniping = False
     
